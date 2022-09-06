@@ -26,10 +26,7 @@ app.get('/*', (req, res, next) => {
         if(!post) return res.status(404).send("Post not found");
         
         // inject meta tags
-        htmlData = htmlData.replace(
-            "<title>React App</title>",
-            `<title>${post.title}</title>`
-        )
+        htmlData = htmlData
         .replace('__META_OG_TITLE__', post.title)
         .replace('__META_OG_DESCRIPTION__', post.description)
         .replace('__META_DESCRIPTION__', post.description)
